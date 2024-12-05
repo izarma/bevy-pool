@@ -1,0 +1,9 @@
+[package]
+name = "pool"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy = "0.15.0"
+# For 2D applications:
+avian2d = { git = "https://github.com/Jondolf/avian", branch = "main" }
