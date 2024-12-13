@@ -6,6 +6,9 @@ use bevy::{
 use avian2d::prelude::*;
 use std::time::Duration;
 
+use super::ball_spawner::BallSpawnerPlugin;
+use super::cue_ball_movement::CueBallMovementPlugin;
+
 #[derive(Debug, Clone, Eq, PartialEq, Hash, States, Default)]
 pub enum AppState {
     Paused,
@@ -24,6 +27,8 @@ impl Plugin for GameRunnerPlugin {
         app
         .add_plugins((
             FrameTimeDiagnosticsPlugin,
+            BallSpawnerPlugin,
+            CueBallMovementPlugin,
             #[cfg(feature = "use-debug-plugin")]
             PhysicsDebugPlugin::default(),
         ))
