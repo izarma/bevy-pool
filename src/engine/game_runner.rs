@@ -7,7 +7,7 @@ use avian2d::prelude::*;
 use std::time::Duration;
 
 use super::ball_spawner::BallSpawnerPlugin;
-use super::cue_ball_movement::CueBallMovementPlugin;
+//use super::cue_ball_movement::CueBallMovementPlugin;
 
 #[derive(Debug, Clone, Eq, PartialEq, Hash, States, Default)]
 pub enum AppState {
@@ -28,7 +28,7 @@ impl Plugin for GameRunnerPlugin {
         .add_plugins((
             FrameTimeDiagnosticsPlugin,
             BallSpawnerPlugin,
-            CueBallMovementPlugin,
+            //CueBallMovementPlugin,
             #[cfg(feature = "use-debug-plugin")]
             PhysicsDebugPlugin::default(),
         ))

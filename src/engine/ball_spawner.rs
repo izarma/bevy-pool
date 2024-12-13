@@ -3,7 +3,6 @@ use bevy::prelude::*;
 
 pub struct BallSpawnerPlugin;
 
-const DARK_GREEN: Color = Color::srgb(0.1, 0.5, 0.1);
 const BROWN: Color = Color::srgb(0.7, 0.4, 0.1);
 const YELLOW: Color = Color::srgb(1.0, 0.92, 0.0);
 
@@ -12,7 +11,8 @@ impl Plugin for BallSpawnerPlugin {
         app
         .add_plugins(PhysicsPlugins::default().with_length_unit(20.0))
         .add_systems(Startup, setup)
-        .add_systems(Update, movement);
+        .add_systems(Update, movement)
+        .insert_resource(Gravity::ZERO);
     }
 }
 
